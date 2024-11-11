@@ -1,8 +1,17 @@
-import pluginVue from 'eslint-plugin-vue'
-import vueTsEslintConfig from '@vue/eslint-config-typescript'
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
-import js from '@eslint/js'
 import importPlugin from 'eslint-plugin-import'
+import pluginVue from 'eslint-plugin-vue'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+import { FlatCompat } from '@eslint/eslintrc'
+import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+import vueTsEslintConfig from '@vue/eslint-config-typescript'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+})
 
 export default [
   {
@@ -15,34 +24,33 @@ export default [
     ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
   },
 
-  js.configs.recommended,
+  skipFormatting,
   importPlugin.flatConfigs.recommended,
+  ...compat.extends('alloy', 'alloy/vue', 'alloy/typescript'),
   ...pluginVue.configs['flat/essential'],
   ...vueTsEslintConfig(),
-  skipFormatting,
-
   {
     rules: {
       'prefer-const': 'warn',
       'prefer-destructuring': [
-        1,
+        'warn',
         {
           object: true,
           array: false,
         },
       ],
-      'import/no-duplicates': 0,
-      'import/no-named-as-default-member': 0,
-      'import/order': 0,
-      'import/no-unresolved': [
-        1,
+      'no-unused-vars': 'warn',
+      'vue/block-lang': [
+        'error',
         {
-          ignore: ['^@/', '^api'],
+          script: {
+            lang: ['ts', 'tsx'],
+            allowNoLang: true,
+          },
         },
       ],
-      'import/default': 'off',
-      'no-unused-vars': 'warn',
       '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/explicit-member-accessibility': 'off',
     },
   },

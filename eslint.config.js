@@ -1,4 +1,3 @@
-import importPlugin from 'eslint-plugin-import'
 import pluginVue from 'eslint-plugin-vue'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -25,7 +24,6 @@ export default [
   },
 
   skipFormatting,
-  importPlugin.flatConfigs.recommended,
   ...compat.extends('alloy', 'alloy/vue', 'alloy/typescript'),
   ...pluginVue.configs['flat/essential'],
   ...vueTsEslintConfig(),

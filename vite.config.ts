@@ -20,6 +20,12 @@ export default defineConfig({
       ],
     }),
   ],
+  css: {
+    postcss: './postcss.config.js',
+    preprocessorOptions: {
+      less: {},
+    },
+  },
   build: {
     outDir: path.resolve(__dirname, 'dist'),
     rollupOptions: {

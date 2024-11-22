@@ -20,6 +20,9 @@ importers:
       primevue:
         specifier: ^4.2.2
         version: 4.2.2(vue@3.5.12(typescript@5.6.3))
+      tailwindcss-primeui:
+        specifier: ^0.3.4
+        version: 0.3.4(tailwindcss@3.4.15)
       vue:
         specifier: ^3.5.12
         version: 3.5.12(typescript@5.6.3)
@@ -1991,6 +1994,11 @@ packages:
   synckit@0.9.2:
     resolution: {integrity: sha512-vrozgXDQwYO72vHjUb/HnFbQx1exDjoKzqx23aXEg2a9VIg2TSFZ8FmeZpTjUCFMYw7mpX4BE2SFu8wI7asYsw==}
     engines: {node: ^14.18.0 || >=16.0.0}
+
+  tailwindcss-primeui@0.3.4:
+    resolution: {integrity: sha512-5+Qfoe5Kpq2Iwrd6umBUb3rQH6b7+pL4jxJUId0Su5agUM6TwCyH5Pyl9R0y3QQB3IRuTxBNmeS11B41f+30zw==}
+    peerDependencies:
+      tailwindcss: '>=3.1.0'
 
   tailwindcss@3.4.15:
     resolution: {integrity: sha512-r4MeXnfBmSOuKUWmXe6h2CcyfzJCEk4F0pptO5jlnYSIViUkVmsawj80N5h2lO3gwcmSb4n3PuN+e+GC1Guylw==}
@@ -4070,6 +4078,10 @@ snapshots:
     dependencies:
       '@pkgr/core': 0.1.1
       tslib: 2.8.1
+
+  tailwindcss-primeui@0.3.4(tailwindcss@3.4.15):
+    dependencies:
+      tailwindcss: 3.4.15
 
   tailwindcss@3.4.15:
     dependencies:

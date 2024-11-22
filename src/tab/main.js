@@ -63,6 +63,12 @@ const Noir = definePreset(Aura, {
 app.use(PrimeVue, {
   theme: {
     preset: Noir,
+    options: {
+      cssLayer: {
+        name: 'primevue',
+        order: 'tailwind-base, primevue, tailwind-utilities',
+      },
+    },
   },
 })
 app.use(createPinia())

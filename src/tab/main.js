@@ -5,11 +5,10 @@ import { createApp } from 'vue'
 import { definePreset } from '@primevue/themes'
 import Aura from '@primevue/themes/aura'
 
-import '@/assets/base.css'
-import '@/assets/main.css'
+import '@/assets/styles/main.css'
+import '@/assets/styles/tailwind.css'
 
 import App from './App.vue'
-import './style.css'
 
 const app = createApp(App)
 

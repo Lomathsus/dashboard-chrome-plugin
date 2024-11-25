@@ -49,30 +49,16 @@ const positions = ref([
     <!--        <label :for="pos.label" class="ml-2"> {{ pos.label }} </label>-->
     <!--      </div>-->
     <!--    </div>-->
-    <div
-      class="dock-window"
-      style="backgroundimage: 'url(https://primefaces.org/cdn/primevue/images/dock/window.jpg))'"
-    >
-      <Dock :model="items">
-        <template #itemicon="{ item }">
-          <img v-tooltip.top="item.label" :alt="item.label" :src="item.icon" style="width: 100%" />
-        </template>
-      </Dock>
-    </div>
+
+    <Dock :model="items">
+      <template #itemicon="{ item }">
+        <img v-tooltip.top="item.label" :alt="item.label" :src="item.icon" style="width: 100%" />
+      </template>
+    </Dock>
   </div>
 </template>
 
 <style scoped>
-.dock-demo > .dock-window {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  background-image: url('https://primefaces.org/cdn/primevue/images/dock/window.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 1;
-}
-
 .dock-demo > .p-dock {
   z-index: 1000;
 }

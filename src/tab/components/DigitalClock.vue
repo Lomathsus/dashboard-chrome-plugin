@@ -30,7 +30,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    class="text-white text-container text-center overflow-visible whitespace-nowrap w-[310px] text-[2.5rem] sm:text-[5rem]"
+    class="text-container text-white text-center overflow-visible whitespace-nowrap text-[2.5rem] sm:text-[5rem]"
   >
     {{ formattedTime }}
   </div>
@@ -42,6 +42,7 @@ onBeforeUnmount(() => {
 
 <style lang="less" scoped>
 .text-container {
+  font-family: 'JetBrains Mono', 'salt', serif;
   text-shadow: 5px 3px 10px rgba(73, 73, 73, 0.5);
 }
 </style>

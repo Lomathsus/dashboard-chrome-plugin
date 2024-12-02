@@ -23,7 +23,11 @@ export default defineConfig({
   css: {
     postcss: './postcss.config.js',
     preprocessorOptions: {
-      less: {},
+      less: {
+        additionalData: `
+             @import "${path.resolve(__dirname, 'src/assets/styles/fonts.less')}";
+           `,
+      },
     },
   },
   build: {

@@ -6,13 +6,15 @@ import bg from '@/assets/images/bg.png'
 import DigitalClock from '@/tab/components/DigitalClock.vue'
 import SearchBar from '@/tab/components/SearchBar.vue'
 import VirtualDocker from '@/tab/components/VirtualDocker.vue'
+import db, { type App } from '@/utils/indexedDB'
 
 const backgroundImage = ref('') // 默认背景图片 URL
 
 const setBackgroundImage = (imageUrl: string) => {
   backgroundImage.value = imageUrl
 }
-
+const apps = ref<App[]>([])
+console.log(apps.value)
 const items = ref([
   {
     label: 'Translate',
@@ -42,6 +44,7 @@ const items = ref([
 ])
 onMounted(() => {
   setBackgroundImage(bg)
+  apps.value = db.getAll('apps')
 })
 </script>
 
@@ -57,7 +60,7 @@ onMounted(() => {
     <div class="h-[20%]" />
     <DigitalClock class="self-center" />
     <SearchBar class="self-center" />
-    <div class=""><VirtualDocker /></div>
+    <VirtualDocker />
   </div>
   <ContextMenu global :model="items" />
 </template>

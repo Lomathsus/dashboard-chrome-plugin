@@ -1,16 +1,5 @@
-import { createPinia } from 'pinia'
-import PrimeVue from 'primevue/config'
-import { createApp } from 'vue'
-
 import { definePreset } from '@primevue/themes'
 import Aura from '@primevue/themes/aura'
-
-import '@/assets/styles/main.css'
-import '@/assets/styles/tailwind.css'
-
-import App from './App.vue'
-
-const app = createApp(App)
 
 const Noir = definePreset(Aura, {
   semantic: {
@@ -59,17 +48,5 @@ const Noir = definePreset(Aura, {
     },
   },
 })
-app.use(PrimeVue, {
-  theme: {
-    preset: Noir,
-    options: {
-      cssLayer: {
-        name: 'primevue',
-        order: 'tailwind-base, primevue, tailwind-utilities',
-      },
-    },
-  },
-})
-app.use(createPinia())
 
-app.mount('#app')
+export default Noir

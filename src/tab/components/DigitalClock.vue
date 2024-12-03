@@ -34,10 +34,6 @@ onBeforeUnmount(() => {
   >
     {{ formattedTime }}
   </div>
-  <!--  <div>-->
-  <!--    <button @click="changeFormat('HH:mm')">HH:mm</button>-->
-  <!--    <button @click="changeFormat('HH:mm:ss')">HH:mm:ss</button>-->
-  <!--  </div>-->
 </template>
 
 <style lang="less" scoped>

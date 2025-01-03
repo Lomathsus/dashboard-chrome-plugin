@@ -5,7 +5,11 @@ export default async function initDB() {
     {
       name: 'apps',
       options: { keyPath: 'id' },
-      indexes: [{ name: 'name', keyPath: 'name' }],
+      indexes: [
+        { name: 'name', keyPath: 'name' },
+        { name: 'icon', keyPath: 'icon' },
+        { name: 'url', keyPath: 'url' },
+      ],
     },
   ]
   try {

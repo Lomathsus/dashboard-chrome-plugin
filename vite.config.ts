@@ -1,9 +1,11 @@
 import path from 'node:path'
 import { URL, fileURLToPath } from 'node:url'
 import copy from 'rollup-plugin-copy'
+import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
+import { PrimeVueResolver } from '@primevue/auto-import-resolver'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
@@ -13,6 +15,9 @@ export default defineConfig({
     vue(),
     vueJsx(),
     vueDevTools(),
+    Components({
+      resolvers: [PrimeVueResolver()],
+    }),
     copy({
       targets: [
         { src: 'src/plugins/manifest.json', dest: 'dist' }, // 复制 manifest.json 到 dist 目录

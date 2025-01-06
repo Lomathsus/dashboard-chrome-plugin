@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { Dialog, Dock, Galleria, Menubar, Terminal, TerminalService, Toast, Tree } from 'primevue'
+import { TerminalService } from 'primevue'
 import { useToast } from 'primevue/usetoast'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
@@ -96,7 +96,6 @@ const items = ref([
         severity: 'error',
         summary: 'An unexpected error occurred while signing in.',
         detail: 'UNTRUSTED_CERT_TITLE',
-        group: 'tc',
         life: 3000,
       })
     },
@@ -105,7 +104,7 @@ const items = ref([
     label: 'Safari',
     icon: 'https://primefaces.org/cdn/primevue//images/dock/safari.svg',
     command: () => {
-      toast.add({ severity: 'warn', summary: 'Safari has stopped working', group: 'tc', life: 3000 })
+      toast.add({ severity: 'warn', summary: 'Safari has stopped working', life: 3000 })
     },
   },
   {

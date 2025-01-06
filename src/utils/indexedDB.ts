@@ -10,7 +10,11 @@ export interface App {
   category?: string
   tags?: string[]
   isFavorite?: boolean
-  isDeleted?: boolean
+}
+export interface Wallpaper {
+  id: number
+  blob: string
+  source: string
 }
 
 export interface Tables {

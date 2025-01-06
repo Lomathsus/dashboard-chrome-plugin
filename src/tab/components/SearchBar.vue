@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { Button, InputGroup, InputGroupAddon, InputText } from 'primevue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <InputGroup class="w-[80%] sm:w-[35%] sm:min-w-[500px] shadow-lg rounded-full">

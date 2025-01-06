@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 
 import bg from '@/assets/images/bg.png'
 import DigitalClock from '@/tab/components/DigitalClock.vue'
+import WallpaperChangeModal from '@/tab/components/Modal/WallpaperChangeModal.vue'
 import RightClickMenu from '@/tab/components/RightClickMenu/index.vue'
 import SearchBar from '@/tab/components/SearchBar.vue'
 import VirtualDocker from '@/tab/components/VirtualDocker.vue'
@@ -36,8 +37,11 @@ onMounted(() => {
     <DigitalClock class="self-center" />
     <SearchBar class="self-center" />
   </div>
-  <VirtualDocker />
   <RightClickMenu />
+
+  <VirtualDocker />
+
+  <WallpaperChangeModal />
 </template>
 
 <style lang="less" scoped></style>

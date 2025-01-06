@@ -1,25 +1,30 @@
 <script setup lang="ts">
-import { ContextMenu } from 'primevue'
-import { ref } from 'vue'
+import { type Ref, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import { useWallpaperStore } from '@/stores/wallpaper'
+
+const store = useWallpaperStore()
 const { t } = useI18n()
 
 const items = ref([
   {
     label: t('menu.changeWallpaper'),
     icon: 'pi pi-image',
+    command: () => {
+      store.updateState('visible', true)
+    },
   },
   {
-    label: 'Speech',
-    icon: 'pi pi-volume-up',
+    label: t('menu.changeHour'),
+    icon: 'pi pi-clock',
     items: [
       {
-        label: 'Start',
+        label: t('menu.12Hour'),
         icon: 'pi pi-caret-right',
       },
       {
-        label: 'Stop',
+        label: t('menu.24Hour'),
         icon: 'pi pi-pause',
       },
     ],
